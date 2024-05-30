@@ -10,10 +10,12 @@ def count_x(string):
     if len(string) == 0:
         return 0
 
+    counting_x_of_remainder = count_x(string[1:])
+
     if string[0] == "x":
-        return 1 + count_x(string[1:])
+        return 1 + counting_x_of_remainder
     else:
-        return count_x(string[1:])
+        return counting_x_of_remainder
 
 
 print(count_x("axbxcx"))
